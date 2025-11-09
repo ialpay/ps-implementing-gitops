@@ -120,3 +120,15 @@ override.tf.json
 *_override.tf.json
 .terraformrc
 terraform.rc
+
+# Ignore everything inside 01–04, but keep the folders themselves
+01/*
+02/*
+03/*
+04/*
+
+# Keep the .gitkeep files so folders exist in repo
+!01/.gitkeep
+!02/.gitkeep
+!03/.gitkeep
+!04/.gitkeep

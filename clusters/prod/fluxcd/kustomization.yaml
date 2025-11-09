@@ -1,12 +1,23 @@
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
+# metadata:
+#   name: globomantics-apps
+#   namespace: flux-system
+# spec:
+#   interval: 10m
+#   path: "./apps/prod"
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: globomantics-gitops
+
+apiVersion: source.toolkit.fluxcd.io/v1
+kind: GitRepository
 metadata:
-  name: globomantics-apps
+  name: globomantics-gitops
   namespace: flux-system
 spec:
-  interval: 10m
-  path: "./apps/prod"
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: globomantics-gitops
+  interval: 1m
+  url: https://github.com/ialpay/ps-implementing-gitops
+  ref:
+    branch: main
